@@ -62,6 +62,8 @@ class oauth2api(object):
             makes call for application token and stores result in credential object
             returns credential object
         """
+        # Fix: reducing the scope list to the valid one
+        scopes = ["https://api.ebay.com/oauth/api_scope"]
       
         logging.info("Trying to get a new application access token ... ")        
         credential = credentialutil.get_credentials(env_type)       
